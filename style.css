@@ -1,0 +1,153 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.video-cont{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+}
+
+.btn-cont{
+    position: absolute;
+    width: 6rem;
+    height: 12rem;
+    top: calc(100vh/2 - 10rem/2);
+    right: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.btn-cont>div{
+    height: 5rem;
+    width: 100%;
+    border: 5px solid whitesmoke;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.record-btn{
+    background-color: red;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+}
+
+.capture-btn{
+    background-color: white;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    animation-name: capture-btn;
+}
+
+.scale-record{
+    animation-name: record-btn;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.scale-capture{
+    animation-name: capture-btn;
+    animation-duration: 0.8s;
+     
+}
+
+@keyframes record-btn{
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes  capture-btn{
+    0% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.timer-cont{
+    position: absolute;
+    top:calc(100vh/2);
+    left:50px;
+    color: white;
+    z-index: 2;
+}
+
+.filter-cont{
+    position:absolute;
+    top:50px;
+    left:50px;
+    height: 16rem;
+    width: 6rem;
+    z-index: 2;
+}
+
+.filter{
+    background-image: url("https://picsum.photos/seed/picsum/200/300");
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-blend-mode:color-burn;
+    
+    height: 4rem;
+    width: 100%;
+}
+
+.lightbrownFilter{
+    background-color: #a52a2a5c;
+}
+
+.lightyellowFilter{
+    background-color: rgba(255, 255, 0, 0.236);
+}
+
+.lightpinkFilter{
+    background-color: rgba(255, 192, 203, 0.274);
+}
+
+.transparentFilter{
+    background-color: transparent;
+}
+
+.filter-layer{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.gallery-icon{
+    position: absolute;
+    bottom: 2.5rem;
+    right: 3.5rem;
+    color: white;
+    font-size: 3rem;
+    z-index: 2;
+}
+
+.gallery-icon:hover{
+    cursor: pointer;
+}
